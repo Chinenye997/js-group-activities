@@ -1,0 +1,606 @@
+Part 4 — Collaborative Technical Challenge
+Scenario
+
+We need to build a program that:
+
+Asks a user for their name and age, then welcomes them and tells them the year they were born.
+
+For example, if the user enters:
+
+Name: Sam
+Age: 20
+
+The program should be able to say something like:
+
+Welcome Sam! You were born in 2006.
+
+Since the current year is 2026, someone who is 20 would generally have a birth year of 2006. For this beginner exercise, we'll use the simple calculation:
+
+2026 - age
+Step 1 — Understand the Problem
+
+The first thing programmers do is understand what they're being asked to build before writing code.
+
+In simple words:
+
+Our program needs to:
+
+Ask the user for their name.
+Ask the user for their age.
+Calculate their approximate year of birth.
+Display a welcome message containing their name.
+Tell them the year they were born.
+
+So, in our own words:
+
+We need to create a program that asks the user for their name and age, calculates their birth year, and then displays a welcome message with their name and birth year.
+
+Step 2 — Identify Inputs
+
+An input is information that the program receives.
+
+Think of it like this:
+
+The user gives something to the program.
+
+What information do we need from the user?
+
+Input 1: Name
+
+For example:
+
+Sam
+Input 2: Age
+
+For example:
+
+20
+
+So our inputs are:
+
+Name
+Age
+
+In JavaScript, we'll get these using:
+
+prompt()
+
+Because remember:
+
+prompt() is used to ask the user for information.
+
+Step 3 — Identify Processing
+
+Processing means:
+
+What does the computer need to do with the information it received?
+
+The user gives us:
+
+Age = 20
+
+We need to calculate their birth year.
+
+The calculation is:
+
+Current Year - Age
+
+So:
+
+2026 - 20 = 2006
+
+Therefore:
+
+Birth Year = 2006
+Our processing is:
+2026 - user's age
+Step 4 — Identify Outputs
+
+An output is what the program gives back or displays.
+
+Our program should display something like:
+
+Welcome Sam!
+You were born in 2006.
+
+So our output contains:
+
+The user's name
+Their calculated birth year
+
+We can use either:
+
+console.log()
+
+or:
+
+alert()
+
+For now, we'll use console.log() because it is easier to see how our program is working.
+
+Step 5 — Plan the Solution
+
+Before writing code, let's write the instructions in plain English.
+
+Imagine you're explaining the program to someone who doesn't know JavaScript.
+
+Our plan:
+Ask the user for their name.
+Store the name in a variable called userName.
+Ask the user for their age.
+Store the age in a variable called userAge.
+Calculate the birth year by subtracting the user's age from 2026.
+Store the result in a variable called birthYear.
+Display a welcome message with the user's name.
+Display their birth year.
+
+That's our entire program in plain English.
+
+Notice how we haven't written much code yet.
+
+This is actually how programmers should approach problems.
+
+Don't immediately jump into code.
+
+Think:
+
+Problem
+   ↓
+Inputs
+   ↓
+Processing
+   ↓
+Outputs
+   ↓
+Plan
+   ↓
+Code
+Step 6 — Write the Code
+
+Now we're ready to turn our plan into JavaScript.
+
+Step 1: Get the user's name
+
+We need to ask:
+
+"What is your name?"
+
+So:
+
+let userName = prompt("What is your name?");
+
+Let's break it down.
+
+let
+
+Create a variable.
+
+userName
+
+The name of our variable.
+
+prompt()
+
+Ask the user for information.
+
+"What is your name?"
+
+The question the user sees.
+
+So:
+
+let userName = prompt("What is your name?");
+
+means:
+
+Ask the user for their name and store their answer inside userName.
+
+Step 2: Get the user's age
+
+We do the same thing:
+
+let userAge = prompt("How old are you?");
+
+Now we have:
+
+userName → user's name
+userAge  → user's age
+
+For example, if the user enters:
+
+Sam
+20
+
+we can think of it as:
+
+userName → "Sam"
+userAge  → "20"
+⚠️ One important thing
+
+Remember what we learned earlier:
+
+prompt() gives us the user's answer as text/string.
+
+So even though the user types:
+
+20
+
+JavaScript initially treats it like:
+
+"20"
+
+We'll learn how to properly convert it into a number very soon. For this activity, we can use Number() to make the calculation clear.
+
+Step 3: Calculate the birth year
+
+We need:
+
+2026 - age
+
+In JavaScript:
+
+let birthYear = 2026 - Number(userAge);
+
+Now let's break that down.
+
+Number(userAge)
+
+means:
+
+Convert the user's age from text into a number.
+
+For example:
+
+"20"
+
+becomes:
+
+20
+
+Then:
+
+2026 - 20
+
+gives:
+
+2006
+
+So:
+
+let birthYear = 2026 - Number(userAge);
+
+stores the result in:
+
+birthYear
+Step 4: Display the result
+
+Now we can say:
+
+console.log("Welcome " + userName + "!");
+console.log("You were born in " + birthYear + ".");
+
+If the user entered:
+
+Sam
+20
+
+the console will display:
+
+Welcome Sam!
+You were born in 2006.
+🎯 Complete Program
+
+Putting everything together:
+
+let userName = prompt("What is your name?");
+let userAge = prompt("How old are you?");
+
+let birthYear = 2026 - Number(userAge);
+
+console.log("Welcome " + userName + "!");
+console.log("You were born in " + birthYear + ".");
+
+Let's trace what happens.
+
+First:
+let userName = prompt("What is your name?");
+
+User enters:
+
+Sam
+
+So:
+
+userName → "Sam"
+Second:
+let userAge = prompt("How old are you?");
+
+User enters:
+
+20
+
+So:
+
+userAge → "20"
+Third:
+let birthYear = 2026 - Number(userAge);
+
+JavaScript converts:
+
+"20"
+
+to:
+
+20
+
+Then calculates:
+
+2026 - 20
+
+Result:
+
+2006
+
+So:
+
+birthYear → 2006
+Finally:
+console.log("Welcome " + userName + "!");
+
+becomes:
+
+Welcome Sam!
+
+And:
+
+console.log("You were born in " + birthYear + ".");
+
+becomes:
+
+You were born in 2006.
+Step 7 — Test the Program
+
+Testing means:
+
+Let's give the program different inputs and see if we get the expected results.
+
+This is something programmers do all the time.
+
+Test Case 1
+Input:
+Name: Sam
+Age: 20
+
+Calculation:
+
+2026 - 20 = 2006
+Expected output:
+Welcome Sam!
+You were born in 2006.
+Test Case 2
+Input:
+Name: Bola
+Age: 45
+
+Calculation:
+
+2026 - 45 = 1981
+Expected output:
+Welcome Bola!
+You were born in 1981.
+
+So our program should produce:
+
+Welcome Bola!
+You were born in 1981.
+Step 8 — Improve the Solution
+
+Now let's look at our variable names.
+
+We used:
+
+let userName
+let userAge
+let birthYear
+
+Are these good names?
+
+Yes. 👍
+
+Why?
+
+Because someone looking at:
+
+let birthYear = 2026 - Number(userAge);
+
+can immediately understand:
+
+userAge = the user's age
+birthYear = the calculated birth year
+
+Compare that with:
+
+let x = prompt("What is your name?");
+let y = prompt("How old are you?");
+let z = 2026 - Number(y);
+
+This works, but it's confusing.
+
+If another programmer sees:
+
+z
+
+they have no idea what z represents.
+
+That's why we use meaningful variable names.
+
+🧠 One more important thing about the birth-year calculation
+
+Our exercise uses:
+
+2026 - Number(userAge)
+
+This is a simplified calculation.
+
+In a real application, the exact birth year can depend on whether the person's birthday has already happened this year.
+
+For example, someone who is currently 20 could have been born in either 2005 or 2006 depending on their birthday.
+
+But for this beginner activity, we're keeping it simple:
+
+Birth year = 2026 - age
+
+That's perfectly fine for learning variables, prompt(), Number(), and calculations.
+
+Part 5 — Extension Challenge
+
+Now we're going to modify the program rather than create a completely new one.
+
+The activity says:
+
+Modify your program so that it also stores the user's favorite hobby in a variable and includes it in the final greeting message.
+
+Currently we have:
+
+let userName = prompt("What is your name?");
+let userAge = prompt("How old are you?");
+
+let birthYear = 2026 - Number(userAge);
+
+console.log("Welcome " + userName + "!");
+console.log("You were born in " + birthYear + ".");
+
+We need to add a hobby.
+
+Step 1: Ask for the hobby
+
+We can add:
+
+let favoriteHobby = prompt("What is your favorite hobby?");
+
+Now our program stores three pieces of information:
+
+userName
+userAge
+favoriteHobby
+
+For example:
+
+userName → "Sam"
+userAge → "20"
+favoriteHobby → "Reading"
+Step 2: Include the hobby in the greeting
+
+We could change:
+
+console.log("Welcome " + userName + "!");
+
+to:
+
+console.log("Welcome " + userName + "!");
+console.log("You were born in " + birthYear + ".");
+console.log("Your favorite hobby is " + favoriteHobby + ".");
+
+If Sam enters:
+
+Name: Sam
+Age: 20
+Hobby: Reading
+
+The output becomes:
+
+Welcome Sam!
+You were born in 2006.
+Your favorite hobby is Reading.
+Complete Activity 1 Program
+
+So our final program becomes:
+
+let userName = prompt("What is your name?");
+let userAge = prompt("How old are you?");
+let favoriteHobby = prompt("What is your favorite hobby?");
+
+let birthYear = 2026 - Number(userAge);
+
+console.log("Welcome " + userName + "!");
+console.log("You were born in " + birthYear + ".");
+console.log("Your favorite hobby is " + favoriteHobby + ".");
+What data type is favoriteHobby?
+
+The hobby should be stored as a String.
+
+For example:
+
+let favoriteHobby = "Reading";
+
+"Reading" is text, so it's a string.
+
+Other examples:
+
+let favoriteHobby = "Dancing";
+let favoriteHobby = "Football";
+let favoriteHobby = "Coding";
+
+They are all strings because they represent text.
+
+And because we're using:
+
+prompt()
+
+the response from the user is initially a string anyway.
+
+🎉 Activity 1 Complete
+
+You've now touched all the topics in Activity 1:
+
+Topic	What you learned
+JavaScript	A language used to give instructions to a computer
+console.log()	Displays information in the console
+alert()	Displays a message to the user
+prompt()	Gets information from the user
+confirm()	Gets true or false from the user
+Variables	Store information
+let	Allows reassignment
+const	Prevents reassignment
+String	Stores text
+Number	Stores numerical values
+Boolean	Stores true or false
+undefined	A variable that has no assigned value
+Number()	Converts text representing a number into a number
+Variable naming	Use clear, meaningful names
+Debugging	Find and correct problems in code
+The biggest idea to remember from Activity 1:
+
+Think of a variable as a labelled box:
+
+              VARIABLE
+                 ↓
+        ┌─────────────────┐
+        │   userName      │
+        │                 │
+        │      "Sam"      │
+        └─────────────────┘
+
+
+        Activity2
+
+When we use + with numbers, it performs mathematical addition.
+
+For example:
+
+1: Addition
+
+let age = 20;
+let extraYears = 5;
+
+console.log(age + extraYears);
+20 + 5 = 25
++ with numbers → ADD
+
+2: Joining strings
+The + operator can also join pieces of text together.
+For example:
+let firstName = "Chi";
+let lastName = "Njeze";
+
+console.log(firstName + " " + lastName);
