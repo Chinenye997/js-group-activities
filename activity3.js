@@ -88,13 +88,36 @@ console.log(word); // javaScript
 
 // Part 3: Debugging Challenge
 // 1
-let userAge = prompt("Enter your age")
+/*let userAge = prompt("Enter your age")
 let nextYearAge = userAge + 1;
 console.log("Next year you will be " + nextyearAge); // this should be nextYearAge not nextyearAge
 
 // 2
 let city = "lagos"
-console.log(city.ToUpperCase()); // this should be toUpperCase not ToUpperCase.
+console.log(city.ToUpperCase());*/ // this should be toUpperCase not ToUpperCase.
 
 
 // Part 4: Username Generator
+let firstName = prompt("Enter your first name:");
+let favoriteNumber  = Number(prompt("Enter your favorite number:"));
+
+let userName = (`${firstName.trim().toLowerCase()}${favoriteNumber}`);
+console.log(userName);
+
+/*Part 5: Extension Challenge
+Add a check using .length — if the name is longer than 8 characters, only use the first
+8 characters in the username.
+ */
+
+let secondName = prompt("Enter your second name:");
+let favoriteNum = Number(prompt("Enter your favorite number:"));
+
+secondName = secondName.trim().toLowerCase();
+
+if(secondName.length > 4){
+    secondName = secondName.slice(0, 4);
+}
+
+let userName = `${secondName}${favoriteNum}`;
+console.log(userName);
+
