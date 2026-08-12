@@ -80,14 +80,19 @@ let sentence = "Learning to code is fun";
 let firstWorld = sentence.split(" ")[0];
 console.log(firstWorld); // output = Learning
 
-//Part 4 — Grade Rounder and Reporter
+//Part 4 — Grade Rounder and Reporter and // Part 5: Extension Challenge
 
 let studentName = prompt("Enter student's name:");
 let score = Number(prompt("Enter student's score:"));
 studentName = studentName.trim().toUpperCase();
-let roundedScore = Math.round(score);
-let message = `${studentName} score ${roundedScore}.`;
+
+let bonus = Math.floor(Math.round() * 6);
+
+let scoreWithBonus = score + bonus;
+
+let roundedScore = Math.round(scoreWithBonus);
+
+let message = `${studentName} scored ${roundedScore} with a bonus ${bonus} point.`;
 console.log(message);
 
 
-// Part 5: Extension Challenge
