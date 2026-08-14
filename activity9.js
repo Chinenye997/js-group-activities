@@ -64,4 +64,19 @@ const subract = (a, b) => a - b; // this ; was fix
 console.log(subract(10, 4)); // this ; was fix 
 
 
-// Part 4: Collaborative Technical Challenge
+// Part 4: Collaborative Technical Challenge / Part 5: Extension Challenge
+const percentageToDecimal = (percentage) => percentage/100;
+const rectangleArea = (length, width) => length * width;
+const celsiusToFahrenheit = (celsius) => (celsius * 9/5) + 32;
+const fahrenheitToCelsius = (fahreheit) => (fahreheit - 32) * 5/9;
+console.log(percentageToDecimal(25));
+console.log(rectangleArea(4, 9));
+console.log(celsiusToFahrenheit(35));
+console.log(celsiusToFahrenheit(100));
+console.log(rectangleArea(10, 5));
+
+let fahreheit = celsiusToFahrenheit(35);
+let celsius = fahrenheitToCelsius(fahreheit);
+
+console.log(fahreheit);
+console.log(celsius);
